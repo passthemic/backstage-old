@@ -16,7 +16,6 @@ class VersesController < ApplicationController
   def create
     @verse = Verse.create(params[:verse])
     respond_with(@verse)
-    end
   end
 
 end
