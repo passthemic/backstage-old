@@ -29,11 +29,3 @@ class SessionsController < Devise::SessionsController
   end
 
 end
-
-
-{
-  "user":{
-    "username" : "testaccount",
-    "password" : "12345678"
-  }
-}
