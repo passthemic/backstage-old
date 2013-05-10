@@ -1,14 +1,11 @@
 class VersesController < ApplicationController
   protect_from_forgery :except => [:create]
-  # respond_to :json
+  respond_to :json
 
 
   def index
     @verses = Verse.all
-    # respond_with({:verses => @verses}.as_json)
-    respond_to do |format|
-      format.json { render :json => @verses }
-    end
+    respond_with({:verses => @verses}.as_json)
   end
 
   def show
@@ -18,15 +15,8 @@ class VersesController < ApplicationController
 
   def create
     @verse = Verse.create(params[:verse])
-    # respond_with(@verse)
-    respond_to do |format|
-      format.html { redirect_to new_verse_url }
-      format.json { render :json => @verse }
+    respond_with(@verse)
     end
-  end
-
-  def new
-    @verse = Verse.new
   end
 
 end
